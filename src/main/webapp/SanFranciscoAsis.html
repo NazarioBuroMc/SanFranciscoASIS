@@ -1,0 +1,867 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Addenda</title>
+
+<style type="text/css">
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	html {
+		height: 100%;
+		font-size: 62.5%
+	}
+	body {
+		height: 100%;
+		background-color: #FFFFFF;
+		font: 1.2em Verdana, Arial, Helvetica, sans-serif;
+	}
+	form {
+		margin: 25px 0 0 29px;
+		width: 700px;
+		padding-bottom: 30px;
+	}
+	fieldset {
+		margin: 0 0 22px 0;
+		border: 1px solid #A33200;
+		padding: 12px 17px;
+		background-color: #FFE1D3;
+	}
+	legend {
+		font-size: 1.1em;
+		background-color: #A33200;
+		color: #FFFFFF;
+		font-weight: bold;
+		padding: 4px 8px;
+	}
+	label.float {
+		float: left;
+		display: block;
+		width: 190px;
+		margin: 4px 0 0 0;
+		clear: left;
+	}
+	label {
+		display: block;
+		width: auto;
+		margin: 0 0 10px 0;
+	}
+	label.spam-protection {
+		display: inline;
+		width: auto;
+		margin: 0;
+	}
+	input.inp-text, textarea, input.choose, input.answer {
+		border: 1px solid #909090;
+		padding: 3px;
+	}
+	input.inp-text {
+		width: 300px;
+		margin: 0 0 8px 0;
+	}
+	textarea {
+		width: 400px;
+		height: 150px;
+		margin: 0 0 12px 0;
+		display: block;
+	}
+	input.choose {
+		margin: 0 2px 0 0;
+	}
+	input.answer {
+		width: 40px;
+		margin: 0 0 0 10px;
+	}
+	input.submit-button {
+		font: 1.4em Georgia, "Times New Roman", Times, serif;
+		letter-spacing: 1px;
+		display: block;
+		margin: 23px 0 0 0;
+	}
+	form br {
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	function callbackFunction(xmlhttp) {}
+	function generarArchivo(){
+		try {
+			var itemsJSON = 
+				  ' { '
+				+ ' 	"deliveryDate": ' + '"' + document.getElementById('requestForPayment1DeliveryDate').value             + '",'
+				+ ' 	"contentVersion": ' + '"' + document.getElementById('requestForPayment2contentVersion').value             + '",'
+				+ ' 	"documentStatus": ' + '"' + document.getElementById('requestForPayment3documentStatus').value             + '",'
+				+ ' 	"documentStructureVersion": ' + '"' + document.getElementById('requestForPayment4documentStructureVersion').value             + '",'
+				+ ' 	"type": ' + '"' + document.getElementById('requestForPayment5type').value             + '",'
+				+ ' 	"requestForPaymentIdentification": {'
+				+ ' 		"entityType": ' + '"' + document.getElementById('requestForPayment6entityType').value             + '",'
+				+ ' 		"uniqueCreatorIdentification": ' + '"' + document.getElementById('requestForPayment7uniqueCreatorIdentification').value             + '"'
+				+ ' 	},'
+				+ ' 	"specialInstruction": {'
+				+ ' 		"text": ' + '"' + document.getElementById('requestForPayment9text').value             + '",'
+				+ ' 		"code": ' + '"' + document.getElementById('requestForPayment8code').value             + '"'
+				+ ' 	},'
+				+ ' 	"orderIdentification": {'
+				+ ' 		"referenceIdentification": {'
+				+ ' 			"value": ' + '"' + document.getElementById('requestForPayment11value').value             + '",'
+				+ ' 			"type": ' + '"' + document.getElementById('requestForPayment0type').value             + '"'
+				+ ' 		},'
+				+ ' 		"referenceDate": ' + '"' + document.getElementById('requestForPayment22ReferenceDate').value             + '"'
+				+ ' 	},'
+				+ ' 	"additionalInformation": {'
+				+ ' 		"referenceIdentification": ['
+				+ ' 			{'
+				+ ' 				"value": ' + '"' + document.getElementById('requestForPayment44value').value             + '",'
+				+ ' 				"type": ' + '"' + document.getElementById('requestForPayment33type').value             + '"'
+				+ ' 			},'
+				+ ' 			{'
+				+ ' 				"value": ' + '"' + document.getElementById('requestForPayment55type').value             + '",'
+				+ ' 				"type": ' + '"' + document.getElementById('requestForPayment66value').value             + '"'
+				+ ' 			}'
+				+ ' 		]'
+				+ ' 	},'
+				+ ' 	"deliveryNote": {'
+				+ ' 		"referenceIdentification": {'
+				+ ' 			"value": ' + '"' + document.getElementById('requestForPayment77referenceIdentification').value             + '",'
+				+ ' 			"type": null'
+				+ ' 		},'
+				+ ' 		"referenceDate": ' + '"' + document.getElementById('requestForPayment88ReferenceDate').value             + '"'
+				+ ' 	},'
+				+ ' 	"buyer": {'
+				+ ' 		"gln": ' + '"' + document.getElementById('requestForPayment99gln').value             + '",'
+				+ ' 		"contactInformation": {'
+				+ ' 			"personOrDepartmentName": {'
+				+ ' 				"text": ' + '"' + document.getElementById('requestForPayment00text').value             + '"'
+				+ ' 			}'
+				+ ' 		}'
+				+ ' 	},'
+				+ ' 	"seller": {'
+				+ ' 		"gln": ' + '"' + document.getElementById('requestForPayment111gln').value             + '",'
+				+ ' 		"alternatePartyIdentification": {'
+				+ ' 			"content": ' + '"' + document.getElementById('requestForPaymentAAAcontent').value             + '",'
+				+ ' 			"type": ' + '"' + document.getElementById('requestForPaymentBBBtype').value             + '"'
+				+ ' 		}'
+				+ ' 	},'
+				+ ' 	"shipTo": {'
+				+ ' 		"gln": ' + '"' + document.getElementById('requestForPayment333gln').value             + '",'
+				+ ' 		"nameAndAddress": {'
+				+ ' 			"name": ' + '"' + document.getElementById('requestForPayment444name').value             + '",'
+				+ ' 			"streetAddressOne": ' + '"' + document.getElementById('requestForPayment555streetAddressOne').value             + '",'
+				+ ' 			"city": ' + '"' + document.getElementById('requestForPayment666city').value             + '",'
+				+ ' 			"postalCode": ' + '"' + document.getElementById('requestForPayment777postalCode').value             + '"'
+				+ ' 		}'
+				+ ' 	},'
+				+ ' 	"invoiceCreator": {'
+				+ ' 		"gln": ' + '"' + document.getElementById('requestForPayment888gln').value             + '",'
+				+ ' 		"alternatePartyIdentification": {'
+				+ ' 			"content": ' + '"' + document.getElementById('requestForPaymentCCCcontent').value             + '",'
+				+ ' 			"type": ' + '"' + document.getElementById('requestForPaymentDDDtype').value             + '"'
+				+ ' 		},'
+				+ ' 		"nameAndAddress": {'
+				+ ' 			"name": ' + '"' + document.getElementById('requestForPayment000name').value             + '",'
+				+ ' 			"streetAddressOne": ' + '"' + document.getElementById('requestForPayment1111streetAddressOne').value             + '",'
+				+ ' 			"city": ' + '"' + document.getElementById('requestForPayment2222city').value             + '",'
+				+ ' 			"postalCode": ' + '"' + document.getElementById('requestForPayment3333postalCode').value             + '"'
+				+ ' 		}'
+				+ ' 	},'
+				+ ' 	"currency": {'
+				+ ' 		"currencyFunction": ' + '"' + document.getElementById('requestForPayment4444currencyISOCode').value             + '",'
+				+ ' 		"rateOfChange": ' + '"' + document.getElementById('requestForPaymentEEEEcurrencyFunction').value             + '",'
+				+ ' 		"currencyISOCode": ' + '"' + document.getElementById('requestForPayment5555rateOfChange').value             + '"'
+				+ ' 	},'
+				+ ' 	"paymentTerms": {'
+				+ ' 		"netPayment": {'
+				+ ' 			"paymentTimePeriod": {'
+				+ ' 				"timePeriodDue": {'
+				+ ' 					"value": ' + '"' + document.getElementById('requestForPayment6666PaymentTermsRelationTime').value             + '",'
+				+ ' 					"timePeriod": ' + '"' + document.getElementById('requestForPayment7777paymentTermsEvent').value             + '"'
+				+ ' 				}'
+				+ ' 			},'
+				+ ' 			"netPaymentTermsType": ' + '"' + document.getElementById('requestForPayment8888netPaymentTermsType').value             + '"'
+				+ ' 		},'
+				+ ' 		"paymentTermsRelationTime": ' + '"' + document.getElementById('requestForPayment9999timePeriod').value             + '",'
+				+ ' 		"paymentTermsEvent": ' + '"' + document.getElementById('requestForPayment0000value').value             + '"'
+				+ ' 	},'
+				+ ' 	"allowanceCharge": {'
+				+ ' 		"specialServicesType": ' + '"' + document.getElementById('requestForPayment11111allowanceChargeType').value             + '",'
+				+ ' 		"monetaryAmountOrPercentage": {'
+				+ ' 			"rate": {'
+				+ ' 				"percentage": ' + '"' + document.getElementById('requestForPayment22222settlementType').value             + '",'
+				+ ' 				"base": ' + '"' + document.getElementById('requestForPayment33333specialServicesType').value             + '"'
+				+ ' 			}'
+				+ ' 		},'
+				+ ' 		"allowanceChargeType": ' + '"' + document.getElementById('requestForPayment44444base').value             + '",'
+				+ ' 		"settlementType": ' + '"' + document.getElementById('requestForPayment55555percentage').value             + '"'
+				+ ' 	},'
+				+ ' 	"lineItem": ['
+				+ ' 		{'
+				+ ' 			"tradeItemIdentification": {'
+				+ ' 				"gtin": ' + '"' + document.getElementById('requestForPayment66666number').value             + '"'
+				+ ' 			},'
+				+ ' 			"alternateTradeItemIdentification": {'
+				+ ' 				"value": ' + '"' + document.getElementById('requestForPayment77777type').value             + '",'
+				+ ' 				"type": ' + '"' + document.getElementById('requestForPayment88888gtin').value             + '"'
+				+ ' 			},'
+				+ ' 			"tradeItemDescriptionInformation": {'
+				+ ' 				"longText": ' + '"' + document.getElementById('requestForPayment99999type').value             + '",'
+				+ ' 				"language": ' + '"' + document.getElementById('requestForPayment00000value').value             + '"'
+				+ ' 			},'
+				+ ' 			"invoicedQuantity": {'
+				+ ' 				"value": ' + '"' + document.getElementById('requestForPayment111111language').value             + '",'
+				+ ' 				"unitOfMeasure": ' + '"' + document.getElementById('requestForPayment222222longText').value             + '"'
+				+ ' 			},'
+				+ ' 			"aditionalQuantity": {'
+				+ ' 				"value": ' + '"' + document.getElementById('requestForPayment333333unitOfMeasure').value             + '",'
+				+ ' 				"quantityType": ' + '"' + document.getElementById('requestForPayment444444value').value             + '"'
+				+ ' 			},'
+				+ ' 			"grossPrice": {'
+				+ ' 				"amount": ' + '"' + document.getElementById('requestForPayment555555QuantityType').value             + '"'
+				+ ' 			},'
+				+ ' 			"netPrice": {'
+				+ ' 				"amount": ' + '"' + document.getElementById('requestForPayment666666value').value             + '"'
+				+ ' 			},'
+				+ ' 			"additionalInformation": null,'
+				+ ' 			"tradeItemTaxInformation": ['
+				+ ' 				{'
+				+ ' 					"taxTypeDescription": ' + '"' + document.getElementById('requestForPayment777777Amount').value             + '",'
+				+ ' 					"tradeItemTaxAmount": {'
+				+ ' 						"taxPercentage": ' + '"' + document.getElementById('requestForPayment888888Amount').value             + '",'
+				+ ' 						"taxAmount": ' + '"' + document.getElementById('requestForPayment999999taxTypeDescription').value             + '"'
+				+ ' 					}'
+				+ ' 				},'
+				+ ' 				{'
+				+ ' 					"taxTypeDescription": ' + '"' + document.getElementById('requestForPayment000000taxPercentage').value             + '",'
+				+ ' 					"tradeItemTaxAmount": {'
+				+ ' 						"taxPercentage": ' + '"' + document.getElementById('requestForPayment1111111taxAmount').value             + '",'
+				+ ' 						"taxAmount": ' + '"' + document.getElementById('requestForPayment2222222taxTypeDescription').value             + '"'
+				+ ' 					}'
+				+ ' 				}'
+				+ ' 			],'
+				+ ' 			"totalLineAmount": {'
+				+ ' 				"grossAmount": {'
+				+ ' 					"amount": ' + '"' + document.getElementById('requestForPayment3333333taxPercentage').value             + '"'
+				+ ' 				},'
+				+ ' 				"netAmount": {'
+				+ ' 					"amount": ' + '"' + document.getElementById('requestForPayment4444444taxAmount').value             + '"'
+				+ ' 				}'
+				+ ' 			},'
+				+ ' 			"number": ' + '"' + document.getElementById('requestForPayment55555555Amount').value             + '",'
+				+ ' 			"type": ' + '"' + document.getElementById('requestForPayment66666666Amount').value             + '"'
+				+ ' 		}'
+				+ ' 	],'
+				+ ' 	"totalAmount": {'
+				+ ' 		"amount": ' + '"' + document.getElementById('requestForPayment77777777Amount').value             + '"'
+				+ ' 	},'
+				+ ' 	"totalAllowanceCharge": {'
+				+ ' 		"amount": ' + '"' + document.getElementById('requestForPayment88888888allowanceOrChargeType').value             + '",'
+				+ ' 		"allowanceOrChargeType": ' + '"' + document.getElementById('requestForPayment99999999Amount').value             + '"'
+				+ ' 	},'
+				+ ' 	"baseAmount": {'
+				+ ' 		"amount": ' + '"' + document.getElementById('requestForPayment00000000Amount').value             + '"'
+				+ ' 	},'
+				+ ' 	"tax": ['
+				+ ' 		{'
+				+ ' 			"taxPercentage": ' + '"' + document.getElementById('requestForPayment111111111type').value             + '",'
+				+ ' 			"taxAmount": ' + '"' + document.getElementById('requestForPayment222222222taxPercentage').value             + '",'
+				+ ' 			"type": ' + '"' + document.getElementById('requestForPayment333333333taxAmount').value             + '"'
+				+ ' 		},'
+				+ ' 		{'
+				+ ' 			"taxPercentage": ' + '"' + document.getElementById('requestForPayment444444444type').value             + '",'
+				+ ' 			"taxAmount": ' + '"' + document.getElementById('requestForPayment555555555taxPercentage').value             + '",'
+				+ ' 			"type": ' + '"' + document.getElementById('requestForPayment666666666taxAmount').value             + '"'
+				+ ' 		}'
+				+ ' 	],'
+				+ ' 	"payableAmount": {'
+				+ ' 		"amount": ' + '"' + document.getElementById('requestForPayment777777777Amount').value             + '"'
+				+ ' 	}'
+				+ ' }'
+				;
+			urlPost = "http://localhost:8080/SanFranciscoAsis/sanFrancisco/getAddendaCall/";
+			var xmlhttp = new XMLHttpRequest();
+			xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
+			xmlhttp.open("POST", urlPost, false);
+			xmlhttp.setRequestHeader("Content-Type", "application/json");
+			xmlhttp.onreadystatechange = callbackFunction(xmlhttp);
+			xmlhttp.send(itemsJSON);
+			alert(xmlhttp.responseText);
+		} catch (e) {
+			alert('Error al consumir el servicio AgendaComercial/soriana/getPieDeCamionAll/: ' + e);
+		}
+	}
+</script>
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>requestForPayment:</legend>
+			<div>
+				<label for="requestForPayment1DeliveryDate" class="float"> DeliveryDate :  </label>
+				<input type="text" id="requestForPayment1DeliveryDate" class="inp-text" size="30"
+					name="nameRequestForPayment1">
+			</div>
+			<div>
+				<label for="requestForPayment2contentVersion" class="float"> contentVersion :  </label>
+				<input type="text" id="requestForPayment2contentVersion" class="inp-text" size="30"
+					name="nameRequestForPayment2">
+			</div>
+			<div>
+				<label for="requestForPayment3documentStatus" class="float"> documentStatus :  </label>
+				<input type="text" id="requestForPayment3documentStatus" class="inp-text" size="30"
+					name="nameRequestForPayment3">
+			</div>
+			<div>
+				<label for="requestForPayment4documentStructureVersion" class="float"> documentStructureVersion :  </label>
+				<input type="text" id="requestForPayment4documentStructureVersion" class="inp-text"
+					size="30" name="nameRequestForPayment4">
+			</div>
+			<div>
+				<label for="requestForPayment5type" class="float"> type :  </label>
+				<input type="text" id="requestForPayment5type" class="inp-text" size="30"
+					name="nameRequestForPayment5">
+			</div>
+			
+			<fieldset>
+				<legend>requestForPaymentIdentification:</legend>
+				<div>
+					<label for="requestForPayment6entityType" class="float"> entityType :  </label>
+					<input type="text" id="requestForPayment6entityType" class="inp-text" size="30"
+						name="nameRequestForPayment6">
+				</div>
+				<div>
+					<label for="requestForPayment7uniqueCreatorIdentification" class="float"> uniqueCreatorIdentification :  </label>
+					<input type="text" id="requestForPayment7uniqueCreatorIdentification" class="inp-text" size="30"
+						name="nameRequestForPayment7">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>specialInstruction:</legend>
+				<div>
+					<label for="requestForPayment8code" class="float"> code :  </label>
+					<input type="text" id="requestForPayment8code" class="inp-text" size="30"
+						name="nameRequestForPayment8">
+				</div>
+				<div>
+					<label for="requestForPayment9text" class="float"> text :  </label>
+					<input type="text" id="requestForPayment9text" class="inp-text" size="30"
+						name="nameRequestForPayment9">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>orderIdentification:</legend>
+				<fieldset>
+					<legend>referenceIdentification:</legend>
+					<div>
+						<label for="requestForPayment0type" class="float"> type :  </label>
+						<input type="text" id="requestForPayment0type" class="inp-text" size="30"
+							name="nameRequestForPayment0">
+					</div>
+					<div>
+						<label for="requestForPayment11value" class="float"> value :  </label>
+						<input type="text" id="requestForPayment11value" class="inp-text" size="30"
+							name="nameRequestForPayment11">
+					</div>
+				</fieldset>
+				<div>
+					<label for="requestForPayment22ReferenceDate" class="float"> ReferenceDate :  </label>
+					<input type="text" id="requestForPayment22ReferenceDate" class="inp-text" size="30"
+						name="nameRequestForPayment22">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>AdditionalInformation:</legend>
+				<fieldset>
+					<legend>referenceIdentification [1]:</legend>
+					<div>
+						<label for="requestForPayment33type" class="float"> type :  </label>
+						<input type="text" id="requestForPayment33type" class="inp-text" size="30"
+							name="nameRequestForPayment33">
+					</div>
+					<div>
+						<label for="requestForPayment44value" class="float"> value :  </label>
+						<input type="text" id="requestForPayment44value" class="inp-text" size="30"
+							name="nameRequestForPayment44">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>referenceIdentification [2]:</legend>
+					<div>
+						<label for="requestForPayment55type" class="float"> type :  </label>
+						<input type="text" id="requestForPayment55type" class="inp-text" size="30"
+							name="nameRequestForPayment55">
+					</div>
+					<div>
+						<label for="requestForPayment66value" class="float"> value :  </label>
+						<input type="text" id="requestForPayment66value" class="inp-text" size="30"
+							name="nameRequestForPayment66">
+					</div>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>DeliveryNote:</legend>
+				<div>
+					<label for="requestForPayment77referenceIdentification" class="float"> referenceIdentification :  </label>
+					<input type="text" id="requestForPayment77referenceIdentification" class="inp-text" size="30"
+						name="nameRequestForPayment77">
+				</div>
+				<div>
+					<label for="requestForPayment88ReferenceDate" class="float"> ReferenceDate :  </label>
+					<input type="text" id="requestForPayment88ReferenceDate" class="inp-text" size="30"
+						name="nameRequestForPayment88">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>buyer:</legend>
+				<div>
+					<label for="requestForPayment99gln" class="float"> gln :  </label>
+					<input type="text" id="requestForPayment99gln" class="inp-text" size="30"
+						name="nameRequestForPayment99">
+				</div>
+				<fieldset>
+					<legend>contactInformation:</legend>
+					<div>
+						<fieldset>
+							<legend>personOrDepartmentName:</legend>
+							<div>
+								<label for="requestForPayment00text" class="float"> text :  </label>
+								<input type="text" id="requestForPayment00text" class="inp-text" size="30"
+									name="nameRequestForPayment00">
+							</div>	
+						</fieldset>
+					</div>	
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>seller:</legend>
+				<div>
+					<label for="requestForPayment111gln" class="float"> gln :  </label>
+					<input type="text" id="requestForPayment111gln" class="inp-text" size="30"
+						name="nameRequestForPayment111">
+				</div>
+				<fieldset>
+					<legend>alternatePartyIdentification:</legend>
+					<div>
+						<label for="requestForPaymentAAAcontent" class="float"> content :  </label>
+						<input type="text" id="requestForPaymentAAAcontent" class="inp-text" size="30"
+							name="nameRequestForPaymentAAA">
+					</div>
+					<div>
+						<label for="requestForPaymentBBBtype" class="float"> type :  </label>
+						<input type="text" id="requestForPaymentBBBtype" class="inp-text" size="30"
+							name="nameRequestForPaymentBBB">
+					</div>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>shipTo:</legend>
+				<div>
+					<label for="requestForPayment333gln" class="float"> gln :  </label>
+					<input type="text" id="requestForPayment333gln" class="inp-text" size="30"
+						name="nameRequestForPayment333">
+				</div>
+				<fieldset>
+					<legend>nameAndAddress:</legend>
+					<div>
+						<label for="requestForPayment444name" class="float"> name :  </label>
+						<input type="text" id="requestForPayment444name" class="inp-text" size="30"
+							name="nameRequestForPayment444">
+					</div>
+					<div>
+						<label for="requestForPayment555streetAddressOne" class="float"> streetAddressOne :  </label>
+						<input type="text" id="requestForPayment555streetAddressOne" class="inp-text" size="30"
+							name="nameRequestForPayment555">
+					</div>
+					<div>
+						<label for="requestForPayment666city" class="float"> city :  </label>
+						<input type="text" id="requestForPayment666city" class="inp-text" size="30"
+							name="nameRequestForPayment666">
+					</div>
+					<div>
+						<label for="requestForPayment777postalCode" class="float"> postalCode :  </label>
+						<input type="text" id="requestForPayment777postalCode" class="inp-text" size="30"
+							name="nameRequestForPayment777">
+					</div>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>InvoiceCreator:</legend>
+				<div>
+					<label for="requestForPayment888gln" class="float"> gln :  </label>
+					<input type="text" id="requestForPayment888gln" class="inp-text" size="30"
+						name="nameRequestForPayment888">
+				</div>
+				<fieldset>
+					<legend>alternatePartyIdentification:</legend>
+					<div>
+						<label for="requestForPaymentCCCcontent" class="float"> content :  </label>
+						<input type="text" id="requestForPaymentCCCcontent" class="inp-text" size="30"
+							name="nameRequestForPaymentCCC">
+					</div>
+					<div>
+						<label for="requestForPaymentDDDtype" class="float"> type :  </label>
+						<input type="text" id="requestForPaymentDDDtype" class="inp-text" size="30"
+							name="nameRequestForPaymentDDD">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>nameAndAddress:</legend>
+					<div>
+						<label for="requestForPayment000name" class="float"> name :  </label>
+						<input type="text" id="requestForPayment000name" class="inp-text" size="30"
+							name="nameRequestForPayment000">
+					</div>
+					<div>
+						<label for="requestForPayment1111streetAddressOne" class="float"> streetAddressOne :  </label>
+						<input type="text" id="requestForPayment1111streetAddressOne" class="inp-text" size="30"
+							name="nameRequestForPayment1111">
+					</div>
+					<div>
+						<label for="requestForPayment2222city" class="float"> city :  </label>
+						<input type="text" id="requestForPayment2222city" class="inp-text" size="30"
+							name="nameRequestForPayment2222">
+					</div>
+					<div>
+						<label for="requestForPayment3333postalCode" class="float"> postalCode :  </label>
+						<input type="text" id="requestForPayment3333postalCode" class="inp-text" size="30"
+							name="nameRequestForPayment3333">
+					</div>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>currency:</legend>
+				<div>
+					<label for="requestForPayment4444currencyISOCode" class="float"> currencyISOCode :  </label>
+					<input type="text" id="requestForPayment4444currencyISOCode" class="inp-text" size="30"
+						name="nameRequestForPayment4444">
+				</div>
+				<div>
+					<label for="requestForPaymentEEEEcurrencyFunction" class="float"> currencyFunction :  </label>
+					<input type="text" id="requestForPaymentEEEEcurrencyFunction" class="inp-text" size="30"
+						name="nameRequestForPaymentEEEE">
+				</div>
+				<div>
+					<label for="requestForPayment5555rateOfChange" class="float"> rateOfChange :  </label>
+					<input type="text" id="requestForPayment5555rateOfChange" class="inp-text" size="30"
+						name="nameRequestForPayment5555">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>paymentTerms:</legend>
+				<div>
+					<label for="requestForPayment6666PaymentTermsRelationTime" class="float"> PaymentTermsRelationTime :  </label>
+					<input type="text" id="requestForPayment6666PaymentTermsRelationTime" class="inp-text" size="30"
+						name="nameRequestForPayment6666">
+				</div>
+				<div>
+					<label for="requestForPayment7777paymentTermsEvent" class="float"> paymentTermsEvent :  </label>
+					<input type="text" id="requestForPayment7777paymentTermsEvent" class="inp-text" size="30"
+						name="nameRequestForPayment7777">
+				</div>
+				<fieldset>
+					<legend>netPayment:</legend>
+					<div>
+						<label for="requestForPayment8888netPaymentTermsType" class="float"> netPaymentTermsType :  </label>
+						<input type="text" id="requestForPayment8888netPaymentTermsType" class="inp-text" size="30"
+							name="nameRequestForPayment8888">
+					</div>
+					<fieldset>
+						<legend>paymentTimePeriod:</legend>
+						<fieldset>
+							<legend>timePeriodDue:</legend>
+							<div>
+								<label for="requestForPayment9999timePeriod" class="float"> timePeriod :  </label>
+								<input type="text" id="requestForPayment9999timePeriod" class="inp-text" size="30"
+									name="nameRequestForPayment9999">
+							</div>
+							<div>
+								<label for="requestForPayment0000value" class="float"> value :  </label>
+								<input type="text" id="requestForPayment0000value" class="inp-text" size="30"
+									name="nameRequestForPayment0000">
+							</div>
+						</fieldset>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>allowanceCharge:</legend>
+				<div>
+					<label for="requestForPayment11111allowanceChargeType" class="float"> allowanceChargeType :  </label>
+					<input type="text" id="requestForPayment11111allowanceChargeType" class="inp-text" size="30"
+						name="nameRequestForPayment11111">
+				</div>
+				<div>
+					<label for="requestForPayment22222settlementType" class="float"> settlementType :  </label>
+					<input type="text" id="requestForPayment22222settlementType" class="inp-text" size="30"
+						name="nameRequestForPayment22222">
+				</div>
+				<div>
+					<label for="requestForPayment33333specialServicesType" class="float"> specialServicesType :  </label>
+					<input type="text" id="requestForPayment33333specialServicesType" class="inp-text" size="30"
+						name="nameRequestForPayment33333">
+				</div>
+				<fieldset>
+					<legend>monetaryAmountOrPercentage:</legend>
+					<fieldset>
+						<legend>rate:</legend>
+						<div>
+							<label for="requestForPayment44444base" class="float"> base :  </label>
+							<input type="text" id="requestForPayment44444base" class="inp-text" size="30"
+								name="nameRequestForPayment44444">
+						</div>
+						<div>
+							<label for="requestForPayment55555percentage" class="float"> percentage :  </label>
+							<input type="text" id="requestForPayment55555percentage" class="inp-text" size="30"
+								name="nameRequestForPayment55555">
+						</div>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>lineItem:</legend>
+				<div>
+					<label for="requestForPayment66666number" class="float"> number :  </label>
+					<input type="text" id="requestForPayment66666number" class="inp-text" size="30"
+						name="nameRequestForPayment66666">
+				</div>
+				<div>
+					<label for="requestForPayment77777type" class="float"> type :  </label>
+					<input type="text" id="requestForPayment77777type" class="inp-text" size="30"
+						name="nameRequestForPayment77777">
+				</div>
+				<fieldset>
+					<legend>tradeItemIdentification:</legend>
+					<div>
+						<label for="requestForPayment88888gtin" class="float"> gtin :  </label>
+						<input type="text" id="requestForPayment88888gtin" class="inp-text" size="30"
+							name="nameRequestForPayment88888">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>alternateTradeItemIdentification:</legend>
+					<div>
+						<label for="requestForPayment99999type" class="float"> type :  </label>
+						<input type="text" id="requestForPayment99999type" class="inp-text" size="30"
+							name="nameRequestForPayment99999">
+					</div>
+					<div>
+						<label for="requestForPayment00000value" class="float"> value :  </label>
+						<input type="text" id="requestForPayment00000value" class="inp-text" size="30"
+							name="nameRequestForPayment00000">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>tradeItemDescriptionInformation:</legend>
+					<div>
+						<label for="requestForPayment111111language" class="float"> language :  </label>
+						<input type="text" id="requestForPayment111111language" class="inp-text" size="30"
+							name="nameRequestForPayment111111">
+					</div>
+					<div>
+						<label for="requestForPayment222222longText" class="float"> longText :  </label>
+						<input type="text" id="requestForPayment222222longText" class="inp-text" size="30"
+							name="nameRequestForPayment222222">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>invoicedQuantity:</legend>
+					<div>
+						<label for="requestForPayment333333unitOfMeasure" class="float"> unitOfMeasure :  </label>
+						<input type="text" id="requestForPayment333333unitOfMeasure" class="inp-text" size="30"
+							name="nameRequestForPayment333333">
+					</div>
+					<div>
+						<label for="requestForPayment444444value" class="float"> value :  </label>
+						<input type="text" id="requestForPayment444444value" class="inp-text" size="30"
+							name="nameRequestForPayment444444">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>aditionalQuantity:</legend>
+					<div>
+						<label for="requestForPayment555555QuantityType" class="float"> QuantityType :  </label>
+						<input type="text" id="requestForPayment555555QuantityType" class="inp-text" size="30"
+							name="nameRequestForPayment555555">
+					</div>
+					<div>
+						<label for="requestForPayment666666value" class="float"> value :  </label>
+						<input type="text" id="requestForPayment666666value" class="inp-text" size="30"
+							name="nameRequestForPayment666666">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>grossPrice:</legend>
+					<div>
+						<label for="requestForPayment777777Amount" class="float"> Amount :  </label>
+						<input type="text" id="requestForPayment777777Amount" class="inp-text" size="30"
+							name="nameRequestForPayment777777">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>netPrice:</legend>
+					<div>
+						<label for="requestForPayment888888Amount" class="float"> Amount :  </label>
+						<input type="text" id="requestForPayment888888Amount" class="inp-text" size="30"
+							name="nameRequestForPayment888888">
+					</div>
+				</fieldset>
+				<fieldset>
+					<legend>tradeItemTaxInformation [1]:</legend>
+					<div>
+						<label for="requestForPayment999999taxTypeDescription" class="float"> taxTypeDescription :  </label>
+						<input type="text" id="requestForPayment999999taxTypeDescription" class="inp-text" size="30"
+							name="nameRequestForPayment999999">
+					</div>
+					<fieldset>
+						<legend>tradeItemTaxAmount :</legend>
+						<div>
+							<label for="requestForPayment000000taxPercentage" class="float"> taxPercentage :  </label>
+							<input type="text" id="requestForPayment000000taxPercentage" class="inp-text" size="30"
+								name="nameRequestForPayment000000">
+						</div>
+						<div>
+							<label for="requestForPayment1111111taxAmount" class="float"> taxAmount :  </label>
+							<input type="text" id="requestForPayment1111111taxAmount" class="inp-text" size="30"
+								name="nameRequestForPayment1111111">
+						</div>
+					</fieldset>
+				</fieldset>
+				<fieldset>
+					<legend>tradeItemTaxInformation [2]:</legend>
+					<div>
+						<label for="requestForPayment2222222taxTypeDescription" class="float"> taxTypeDescription :  </label>
+						<input type="text" id="requestForPayment2222222taxTypeDescription" class="inp-text" size="30"
+							name="nameRequestForPayment2222222">
+					</div>
+					<fieldset>
+						<legend>tradeItemTaxAmount :</legend>
+						<div>
+							<label for="requestForPayment3333333taxPercentage" class="float"> taxPercentage :  </label>
+							<input type="text" id="requestForPayment3333333taxPercentage" class="inp-text" size="30"
+								name="nameRequestForPayment3333333">
+						</div>
+						<div>
+							<label for="requestForPayment44444444taxAmount" class="float"> taxAmount :  </label>
+							<input type="text" id="requestForPayment4444444taxAmount" class="inp-text" size="30"
+								name="nameRequestForPayment4444444">
+						</div>
+					</fieldset>
+				</fieldset>
+				<fieldset>
+					<legend>totalLineAmount :</legend>
+					<fieldset>
+						<legend>grossAmount :</legend>
+						<div>
+							<label for="requestForPayment55555555Amount" class="float"> Amount :  </label>
+							<input type="text" id="requestForPayment55555555Amount" class="inp-text" size="30"
+								name="nameRequestForPayment55555555">
+						</div>
+					</fieldset>
+					<fieldset>
+						<legend>netAmount :</legend>
+						<div>
+							<label for="requestForPayment66666666Amount" class="float"> Amount :  </label>
+							<input type="text" id="requestForPayment66666666Amount" class="inp-text" size="30"
+								name="nameRequestForPayment66666666">
+						</div>
+					</fieldset>
+				</fieldset>
+			</fieldset>
+			
+			<fieldset>
+				<legend>totalAmount :</legend>
+				<div>
+					<label for="requestForPayment77777777Amount" class="float"> Amount :  </label>
+					<input type="text" id="requestForPayment77777777Amount" class="inp-text" size="30"
+						name="nameRequestForPayment77777777">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>TotalAllowanceCharge :</legend>
+				<div>
+					<label for="requestForPayment88888888allowanceOrChargeType" class="float"> allowanceOrChargeType :  </label>
+					<input type="text" id="requestForPayment88888888allowanceOrChargeType" class="inp-text" size="30"
+						name="nameRequestForPayment88888888">
+				</div>
+				<div>
+					<label for="requestForPayment99999999Amount" class="float"> Amount :  </label>
+					<input type="text" id="requestForPayment99999999Amount" class="inp-text" size="30"
+						name="nameRequestForPayment99999999">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>baseAmount :</legend>
+				<div>
+					<label for="requestForPayment00000000Amount" class="float"> Amount :  </label>
+					<input type="text" id="requestForPayment00000000Amount" class="inp-text" size="30"
+						name="nameRequestForPayment00000000">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>tax [1]:</legend>
+				<div>
+					<label for="requestForPayment111111111type" class="float"> type :  </label>
+					<input type="text" id="requestForPayment111111111type" class="inp-text" size="30"
+						name="nameRequestForPayment111111111">
+				</div>
+				<div>
+					<label for="requestForPayment222222222taxPercentage" class="float"> taxPercentage :  </label>
+					<input type="text" id="requestForPayment222222222taxPercentage" class="inp-text" size="30"
+						name="nameRequestForPayment222222222">
+				</div>
+				<div>
+					<label for="requestForPayment333333333taxAmount" class="float"> taxAmount :  </label>
+					<input type="text" id="requestForPayment333333333taxAmount" class="inp-text" size="30"
+						name="nameRequestForPayment333333333">
+				</div>
+			</fieldset>
+			<fieldset>
+				<legend>tax [2]:</legend>
+				<div>
+					<label for="requestForPayment444444444type" class="float"> type :  </label>
+					<input type="text" id="requestForPayment444444444type" class="inp-text" size="30"
+						name="nameRequestForPayment444444444">
+				</div>
+				<div>
+					<label for="requestForPayment555555555taxPercentage" class="float"> taxPercentage :  </label>
+					<input type="text" id="requestForPayment555555555taxPercentage" class="inp-text" size="30"
+						name="nameRequestForPayment555555555">
+				</div>
+				<div>
+					<label for="requestForPayment666666666taxAmount" class="float"> taxAmount :  </label>
+					<input type="text" id="requestForPayment666666666taxAmount" class="inp-text" size="30"
+						name="nameRequestForPayment666666666">
+				</div>
+			</fieldset>
+			
+			<fieldset>
+				<legend>payableAmount :</legend>
+				<div>
+					<label for="requestForPayment777777777Amount" class="float"> Amount :  </label>
+					<input type="text" id="requestForPayment777777777Amount" class="inp-text" size="30"
+						name="nameRequestForPayment777777777">
+				</div>
+			</fieldset>
+			
+		</fieldset>
+		<p>
+			<button type="button" onclick="generarArchivo()">Generar esquema.</button>
+		</p>
+	</form>
+</body>
+</html>
