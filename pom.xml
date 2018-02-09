@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 
 	<name>SanFranciscoAsis</name>
-	<description>San Francisco de Asis</description>
+	<description>Addenda San Francisco de Asis</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
